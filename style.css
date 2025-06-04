@@ -1,0 +1,111 @@
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo geral */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  padding: 20px;
+}
+
+.form-caixa-maior {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+.form-nome,
+.form-senha {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.form-botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.botao-enviar,
+.botao-limpar {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.botao-enviar {
+  background-color: #0026ff;
+}
+
+.botao-limpar {
+  background-color: #525b62;
+}
+
+/* Ícones com pseudo-elementos */
+.form-nome::before,
+.form-senha::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 36px;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.form-nome::before {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1077/1077114.png');
+}
+
+.form-senha::before {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/2913/2913115.png');
+}
+
+/* Efeito ao passar o mouse */
+.botao-enviar:hover::after,
+.botao-limpar:hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 600px) {
+  .form-caixa-maior {
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 0;
+  }
+}
